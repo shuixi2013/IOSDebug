@@ -1,12 +1,5 @@
 
-//
-//
-//  main.m
-//  test
-//
-//  Created by baidu on 16/10/8.
-//  Copyright © 2016年 baidu. All rights reserved.
-//
+
 
 #import <UIKit/UIKit.h>
 #include "utility.h"

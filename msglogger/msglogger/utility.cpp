@@ -1,11 +1,6 @@
 //
 //  utility.cpp
 //  test
-//
-//  Created by baidu on 16/10/9.
-//  Copyright © 2016年 baidu. All rights reserved.
-//
-
 
 //  /usr/lib//libutility.dylib
 
