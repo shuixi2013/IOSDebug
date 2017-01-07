@@ -1,20 +1,21 @@
 # msglogger
 
-		githubÉÏÓĞÈô¸ÉÓÃÓÚ¼ÍÂ¼objc_msgSendÏûÏ¢µÄ²Ö¿â£¬È»¶ø¾ù´æÔÚÒ»¶¨ÎÊÌâ
-		1.Ê¹ÓÃdyld_insertlibrary·½Ê½Æô¶¯£¬²»ÊÊÓÃÓÚios app
-		2.Ê¹ÓÃsubstrate¿ò¼ÜÊÇ³£Àí£¬È»¶øÔÚnew_objc_msgSend»Øµ÷ÖĞ×öÁËÌ«¶àÊÂÇéÒÔÖÂĞ§ÂÊºÜµÍ(Õâ°üÀ¨Snoop-it)
-		3.½«new_objc_msgSend»Øµ÷ÊµÏÖÔÚ.m/.mmÎÄ¼şÖĞ£¬µ¼ÖÂµİ¹é(ÒòÎª±àÒëÆ÷»áÉú³É¾Ö²¿±äÁ¿¹¹ÔìÎö¹¹´úÂë£¬ÀïÃæÒ²µ÷ÓÃµÄobjc_msgSend)(Õâ°üÀ¨InspectiveC)£¬¶øÊµÏÖÔÚc/cppÖĞÔò²»»áÓĞµİ¹éÎÊÌâ
-		4.Î´ÄÜ½âÎöobjc_msgSend²ÎÊı
-		¶ÔÓÚ´ËÎÊÌâ£¬Ìá¹©µÄ½â¾ö·½°¸£º
-		1.Ê¹ÓÃcydia substrate¿ò¼ÜÊµÏÖmsgsend hookÒÔ¼°CydiaÌá¹©µÄMobileLoader×Ô¶¯¼ÓÔØdylibÄ£¿é£¨×¢ÒâiosÉè±¸ÉÏ´æÔÚµÄsubstrateÍ·ÎÄ¼şÊÇ×îÈ«µÄ£©
-		2.new_objc_msgSend»Øµ÷×ö³ÉÒì²½ÈÎÎñÊ½£¬¼ì²éselectorµÄµØÖ·¿Õ¼äÊÇ·ñÎ»ÓÚ¸ÃÄ£¿é£¬ÕâÑù±ÈÆ¥ÅäidºÍselector¿ìµÃ¶à
-		3.ÔÚ.c/.cppÖĞÊµÏÖnew_objc_msgSend»Øµ÷
-		4.´Ósignature½âÎö³ö²ÎÊıÀàĞÍ£¨ÓÉÓÚÆ¥ÅäÒªclass+selector£¬¿ªÆô¸Ã¹¦ÄÜÔò²»¿É±ÜÃâµÄºÄÊ±£©
+		githubä¸Šæœ‰è‹¥å¹²ç”¨äºçºªå½•objc_msgSendæ¶ˆæ¯çš„ä»“åº“ï¼Œç„¶è€Œå‡å­˜åœ¨ä¸€å®šé—®é¢˜
+		1.ä½¿ç”¨dyld_insertlibraryæ–¹å¼å¯åŠ¨ï¼Œä¸é€‚ç”¨äºios app
+		2.ä½¿ç”¨substrateæ¡†æ¶æ˜¯å¸¸ç†ï¼Œç„¶è€Œåœ¨new_objc_msgSendå›è°ƒä¸­åšäº†å¤ªå¤šäº‹æƒ…ä»¥è‡´æ•ˆç‡å¾ˆä½(è¿™åŒ…æ‹¬Snoop-it)
+		3.å°†new_objc_msgSendå›è°ƒå®ç°åœ¨.m/.mmæ–‡ä»¶ä¸­ï¼Œå¯¼è‡´é€’å½’(å› ä¸ºç¼–è¯‘å™¨ä¼šç”Ÿæˆå±€éƒ¨å˜é‡æ„é€ ææ„ä»£ç ï¼Œé‡Œé¢ä¹Ÿè°ƒç”¨çš„objc_msgSend)(è¿™åŒ…æ‹¬InspectiveC)ï¼Œè€Œå®ç°åœ¨c/cppä¸­åˆ™ä¸ä¼šæœ‰é€’å½’é—®é¢˜
+		4.æœªèƒ½è§£æobjc_msgSendå‚æ•°
+		å¯¹äºæ­¤é—®é¢˜ï¼Œæä¾›çš„è§£å†³æ–¹æ¡ˆï¼š
+		1.ä½¿ç”¨cydia substrateæ¡†æ¶å®ç°msgsend hookä»¥åŠCydiaæä¾›çš„MobileLoaderè‡ªåŠ¨åŠ è½½dylibæ¨¡å—ï¼ˆæ³¨æ„iosè®¾å¤‡ä¸Šå­˜åœ¨çš„substrateå¤´æ–‡ä»¶æ˜¯æœ€å…¨çš„ï¼‰
+		2.new_objc_msgSendå›è°ƒåšæˆå¼‚æ­¥ä»»åŠ¡å¼ï¼Œæ£€æŸ¥selectorçš„åœ°å€ç©ºé—´æ˜¯å¦ä½äºè¯¥æ¨¡å—ï¼Œè¿™æ ·æ¯”åŒ¹é…idå’Œselectorå¿«å¾—å¤š
+		3.åœ¨.c/.cppä¸­å®ç°new_objc_msgSendå›è°ƒ
+		4.ä»signatureè§£æå‡ºå‚æ•°ç±»å‹ï¼ˆç”±äºåŒ¹é…è¦class+selectorï¼Œå¼€å¯è¯¥åŠŸèƒ½åˆ™ä¸å¯é¿å…çš„è€—æ—¶ï¼‰
 		
-		msgloggerÊ¹ÓÃ·½Ê½£º
+		msgloggerä½¿ç”¨æ–¹å¼ï¼š
 		./utilityserver --app_inject "com.?"
-		/tmp/msglog.txt²é¿´½á¹û
+		/tmp/msglog.txtæŸ¥çœ‹ç»“æœ
 		
-		´æÔÚµÄÎÊÌâ£º
-		¶ÔÓÚ´óµÄ¿ÉÖ´ĞĞÎÄ¼şÓÉÓÚmsgSendÏàµ±Æµ·±£¬Òò´Ë²»ÍÆ¼öhook msgSend·½Ê½£¬¿ÉÒÔ¿¼ÂÇÊ¹ÓÃfrida»òcycript hookÄ³Ğ©selector
+		å­˜åœ¨çš„é—®é¢˜ï¼š
+		å¯¹äºå¤§çš„å¯æ‰§è¡Œæ–‡ä»¶ç”±äºmsgSendç›¸å½“é¢‘ç¹ï¼Œå› æ­¤ä¸æ¨èhook msgSendæ–¹å¼ï¼Œå¯ä»¥è€ƒè™‘ä½¿ç”¨fridaæˆ–cycript hookæŸäº›selector
 		
+äº¤æµç¾¤560017652æ¬¢è¿è®¨è®º
